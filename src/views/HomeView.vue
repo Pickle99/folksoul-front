@@ -5,7 +5,9 @@
       <h1 class="font-mono mt-1">FolkSoul</h1>
     </div>
     <div>
-      <h1 class="cursor-pointer">შესვლა</h1>
+      <RouterLink :to="{ name: 'login' }" class="cursor-pointer"
+        >შესვლა</RouterLink
+      >
     </div>
   </div>
 
@@ -44,19 +46,19 @@
         </div>
         <div class="absolute">
           <div
-            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[20rem]"
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[19rem]"
           >
             <div class="animate-spin-slow">
-              <div class="bg-black p-2 transform translate-y-[20.5rem]"></div>
+              <div class="bg-black p-2 transform translate-y-[19.5rem]"></div>
             </div>
           </div>
         </div>
         <div>
           <div
-            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[25rem]"
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[23rem]"
           >
             <div class="animate-spin-slow">
-              <div class="bg-black p-2 transform -translate-y-[25.5rem]"></div>
+              <div class="bg-black p-2 transform -translate-y-[23.5rem]"></div>
             </div>
           </div>
         </div>

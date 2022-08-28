@@ -6,6 +6,6 @@
 
 <style>
 html {
-  background-color: #534571;
+  background: radial-gradient(50% 50% at 50% 50%, #534571 0%, #342c46 100%);
 }
 </style>
