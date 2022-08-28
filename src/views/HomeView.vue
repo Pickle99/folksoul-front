@@ -9,10 +9,59 @@
     </div>
   </div>
 
-  <div class="flex mx-20 justify-between mt-20">
-    <div>
-      <h1>Place for circle****</h1>
-    </div>
+  <div class="flex mx-20 justify-between mt-5">
+    <main>
+      <div class="flex justify-center items-center">
+        <div class="absolute animate-pulse">
+          <music-icon />
+        </div>
+        <div class="absolute">
+          <div
+            class="border-dashed border-2 animate-none border-[#F2C94C] rounded-full p-[7rem]"
+          >
+            <div class="animate-spin-slow">
+              <div class="bg-black p-2 transform translate-x-[7.5rem]"></div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute">
+          <div
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[12rem]"
+          >
+            <div class="animate-spin-slow flex">
+              <div class="bg-black p-2 transform -translate-x-[12.5rem]"></div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute">
+          <div
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[16rem]"
+          >
+            <div class="animate-spin-slow">
+              <div class="bg-black p-2 transform translate-x-[16.5rem]"></div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute">
+          <div
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[20rem]"
+          >
+            <div class="animate-spin-slow">
+              <div class="bg-black p-2 transform translate-y-[20.5rem]"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="border-dashed border-2 border-[#F2C94C] rounded-full p-[25rem]"
+          >
+            <div class="animate-spin-slow">
+              <div class="bg-black p-2 transform -translate-y-[25.5rem]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <div>
       <div>
         <div class="justify-center p-10 flex-col items-center flex">
@@ -75,4 +124,5 @@ import GuyWithGuitarsIcon from "@/components/icons/GuyWithGuitarsIcon.vue";
 import FacebookIcon from "@/components/icons/FacebookIcon.vue";
 import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 import YoutubeIcon from "@/components/icons/YoutubeIcon.vue";
+import MusicIcon from "@/components/icons/MusicIcon.vue";
 </script>
