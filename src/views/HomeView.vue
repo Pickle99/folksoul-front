@@ -5,7 +5,10 @@
       <h1 class="font-mono mt-1">FolkSoul</h1>
     </div>
     <div>
-      <RouterLink :to="{ name: 'login' }" class="cursor-pointer"
+      <RouterLink
+        v-if="!LocalStorageStore.token"
+        :to="{ name: 'login' }"
+        class="cursor-pointer"
         >შესვლა</RouterLink
       >
     </div>
@@ -127,4 +130,7 @@ import FacebookIcon from "@/components/icons/FacebookIcon.vue";
 import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 import YoutubeIcon from "@/components/icons/YoutubeIcon.vue";
 import MusicIcon from "@/components/icons/MusicIcon.vue";
+import { useLocalStorageStore } from "@/stores/useLocalStorageStore.js";
+
+const LocalStorageStore = useLocalStorageStore();
 </script>

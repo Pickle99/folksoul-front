@@ -47,6 +47,9 @@ import { Form as ValidationForm, Field, ErrorMessage } from "vee-validate";
 import axios from "@/config/axios/index.js";
 import BasicButton from "@/components/UI/BasicButton.vue";
 import RectangleIcon from "@/components/icons/RectangleIcon.vue";
+import { useLocalStorageStore } from "@/stores/useLocalStorageStore.js";
+import { mapWritableState } from "pinia";
+
 export default {
   components: {
     ValidationForm,
@@ -61,6 +64,9 @@ export default {
       password: "",
     };
   },
+  computed: {
+    ...mapWritableState(useLocalStorageStore, ["token"]),
+  },
   methods: {
     login() {
       axios
@@ -74,7 +80,10 @@ export default {
             })
             .then((res) => {
               console.log(res);
-              this.$router.push({ name: "home" });
+              localStorage.setItem("token", res.data);
+              this.token = localStorage.getItem("token");
+              window.location.href =
+                import.meta.env.VITE_FRONT_BASE_URL + "admin-panel";
             })
             .catch((err) => console.log(err));
         })

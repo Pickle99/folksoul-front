@@ -9,6 +9,7 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     "X-Requested-With": "XMLHttpRequest",
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 });
 
