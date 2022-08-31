@@ -44,7 +44,7 @@
 
 <script>
 import { Form as ValidationForm, Field, ErrorMessage } from "vee-validate";
-import axios from "axios";
+import axios from "@/config/axios/index.js";
 import BasicButton from "@/components/UI/BasicButton.vue";
 import RectangleIcon from "@/components/icons/RectangleIcon.vue";
 export default {
@@ -64,14 +64,19 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://localhost:8000/api/login", {
-          username: this.username,
-          password: this.password,
-        })
+        .get("http://localhost:8000/sanctum/csrf-cookie")
         .then((res) => {
-          localStorage.setItem("token", res.data);
-          this.$router.push("/");
           console.log(res);
+          axios
+            .post("login", {
+              username: this.username,
+              password: this.password,
+            })
+            .then((res) => {
+              console.log(res);
+              this.$router.push({ name: "home" });
+            })
+            .catch((err) => console.log(err));
         })
         .catch((err) => {
           console.log(err);
