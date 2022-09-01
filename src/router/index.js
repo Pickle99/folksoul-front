@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
-import AdminPanelView from "@/views/AdminPanelView.vue";
+import PanelView from "@/views/Admin/PanelView.vue";
+import MembersView from "@/views/Admin/MembersView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,9 +18,14 @@ const router = createRouter({
       component: LoginView,
     },
     {
-      path: "/admin-panel",
+      path: "/admin",
       name: "admin",
-      component: AdminPanelView,
+      component: PanelView,
+    },
+    {
+      path: "/admin/members",
+      name: "members",
+      component: MembersView,
     },
   ],
 });
