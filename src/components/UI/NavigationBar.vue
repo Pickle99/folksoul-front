@@ -35,14 +35,14 @@
             <p>ჯგუფის წევრები</p>
           </div>
         </RouterLink>
-        <article class="flex items-center">
+        <RouterLink :to="{ name: 'socials' }" class="flex items-center">
           <div class="w-24 flex justify-center">
             <youtube-icon />
           </div>
           <div>
             <p>სოციალური ქსელები</p>
           </div>
-        </article>
+        </RouterLink>
         <article class="flex items-center">
           <div class="w-24 flex justify-center">
             <note-icon />
