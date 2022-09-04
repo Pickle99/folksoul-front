@@ -20,9 +20,12 @@
           <basic-button class="bg-gray-600 opacity-30 rounded-full p-2.5" />
         </div>
         <div class="flex">
-          <h1 class="underline cursor-pointer text-[#3A7DA3] mt-20 font-bold">
+          <RouterLink
+            :to="{ name: 'add-member' }"
+            class="underline cursor-pointer text-[#3A7DA3] mt-20 font-bold"
+          >
             ახალი წევრი გყავს?
-          </h1>
+          </RouterLink>
         </div>
       </div>
     </WhiteWindow>

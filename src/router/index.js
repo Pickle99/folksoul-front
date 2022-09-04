@@ -5,6 +5,7 @@ import PanelView from "@/views/Admin/PanelView.vue";
 import MembersView from "@/views/Admin/MembersView.vue";
 import SocialsView from "@/views/Admin/SocialsView.vue";
 import AboutView from "@/views/Admin/AboutView.vue";
+import AddMemberView from "@/views/Admin/AddMemberView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: "/admin/about",
       name: "about",
       component: AboutView,
+    },
+    {
+      path: "/admin/add-member",
+      name: "add-member",
+      component: AddMemberView,
     },
   ],
 });

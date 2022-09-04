@@ -23,7 +23,7 @@
         <RouterLink
           :to="{ name: 'members' }"
           :class="
-            $route.name === 'members'
+            $route.name === 'members' || $route.name === 'add-member'
               ? 'flex py-3 bg-white text-[#143B52] items-center'
               : 'flex py-3 items-center'
           "
