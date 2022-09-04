@@ -15,11 +15,11 @@
         <ValidationForm class="">
           <div class="flex justify-center">
             <Field
-              name="name"
+              name="member_name"
               class="border-[1px] border-[#143B52] text-center rounded-md w-[19rem] p-5"
               placeholder="სახელი"
             />
-            <ErrorMessage name="name" />
+            <ErrorMessage name="member_name" />
           </div>
           <div class="flex justify-around w-[55rem] mt-5">
             <Field
@@ -58,7 +58,9 @@
                 დაამატე წევრი
               </basic-button>
             </div>
-            <div class="flex justify-center mt-2 underline text-[#3A7DA3] font-bold">
+            <div
+              class="flex justify-center mt-2 underline text-[#3A7DA3] font-bold"
+            >
               <RouterLink :to="{ name: 'members' }"> გადი უკან </RouterLink>
             </div>
           </div>

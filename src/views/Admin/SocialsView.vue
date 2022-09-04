@@ -15,9 +15,12 @@
       <SocialLink />
       <div class="flex justify-center flex-col items-center mt-16">
         <div class="flex">
-          <h1 class="underline cursor-pointer text-[#3A7DA3] mt-20 font-bold">
+          <RouterLink
+            :to="{ name: 'add-social' }"
+            class="underline cursor-pointer text-[#3A7DA3] mt-20 font-bold"
+          >
             დაამატე ახალი სოციალური ბმული
-          </h1>
+          </RouterLink>
         </div>
       </div>
     </WhiteWindow>
