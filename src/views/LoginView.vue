@@ -83,7 +83,7 @@ export default {
               localStorage.setItem("token", res.data);
               this.token = localStorage.getItem("token");
               window.location.href =
-                import.meta.env.VITE_FRONT_BASE_URL + "admin-panel";
+                import.meta.env.VITE_FRONT_BASE_URL + "admin";
             })
             .catch((err) => console.log(err));
         })

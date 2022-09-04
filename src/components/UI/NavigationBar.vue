@@ -35,7 +35,14 @@
             <p>ჯგუფის წევრები</p>
           </div>
         </RouterLink>
-        <RouterLink :to="{ name: 'socials' }" class="flex items-center">
+        <RouterLink
+          :to="{ name: 'socials' }"
+          :class="
+            $route.name === 'socials'
+              ? 'flex py-3 bg-white text-[#143B52] items-center'
+              : 'flex py-3 items-center'
+          "
+        >
           <div class="w-24 flex justify-center">
             <youtube-icon />
           </div>
@@ -43,22 +50,29 @@
             <p>სოციალური ქსელები</p>
           </div>
         </RouterLink>
-        <article class="flex items-center">
+        <RouterLink
+          :to="{ name: 'about' }"
+          :class="
+            $route.name === 'about'
+              ? 'flex py-3 bg-white text-[#143B52] items-center'
+              : 'flex py-3 items-center'
+          "
+        >
           <div class="w-24 flex justify-center">
             <note-icon />
           </div>
           <div>
             <p>ბენდის შესახებ</p>
           </div>
-        </article>
-        <article class="flex items-center">
+        </RouterLink>
+        <basic-button @click="logout()" class="flex items-center">
           <div class="w-24 flex justify-center">
             <door-icon />
           </div>
           <div>
             <p>გადი გარეთ</p>
           </div>
-        </article>
+        </basic-button>
       </nav>
     </div>
   </div>
@@ -70,4 +84,22 @@ import NoteIcon from "@/components/icons/NoteIcon.vue";
 import YoutubeIcon from "@/components/icons/YoutubeIcon.vue";
 import MemberIcon from "@/components/icons/MemberIcon.vue";
 import HomeIcon from "@/components/icons/HomeIcon.vue";
+import { useRouter } from "vue-router";
+import axios from "@/config/axios/index.js";
+import { useLocalStorageStore } from "@/stores/useLocalStorageStore.js";
+import BasicButton from "@/components/UI/BasicButton.vue";
+
+const LocalStorageStore = useLocalStorageStore();
+const router = useRouter();
+
+function logout() {
+  axios
+    .post("logout")
+    .then(() => {
+      LocalStorageStore.token = null;
+      localStorage.removeItem("token");
+      router.push({ name: "home" });
+    })
+    .catch((err) => console.log(err));
+}
 </script>
