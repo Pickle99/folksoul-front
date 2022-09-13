@@ -49,6 +49,7 @@ import BasicButton from "@/components/UI/BasicButton.vue";
 import RectangleIcon from "@/components/icons/RectangleIcon.vue";
 import { useLocalStorageStore } from "@/stores/useLocalStorageStore.js";
 import { mapWritableState } from "pinia";
+import { getSanctumToken, setSanctumToken } from "@/helpers/sanctum/index.js";
 
 export default {
   components: {
@@ -80,10 +81,12 @@ export default {
             })
             .then((res) => {
               console.log(res);
-              localStorage.setItem("token", res.data);
-              this.token = localStorage.getItem("token");
-              window.location.href =
-                import.meta.env.VITE_FRONT_BASE_URL + "admin";
+              setSanctumToken(res.data, 10111);
+              this.token = getSanctumToken();
+              this.$router.push({ name: "admin" });
+
+              // window.location.href =
+              //   import.meta.env.VITE_FRONT_BASE_URL + "admin";
             })
             .catch((err) => console.log(err));
         })

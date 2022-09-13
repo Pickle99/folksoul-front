@@ -11,7 +11,7 @@
     <div
       class="justify-center flex text-white my-4 border-b-[1px] border-black pb-5"
     >
-      <h1>NAME</h1>
+      <h1>{{ props.member.name }}</h1>
     </div>
     <div class="flex justify-center justify-between mx-5 my-3">
       <green-button-icon class="cursor-pointer" />
@@ -26,4 +26,10 @@ import MemberIcon from "@/components/icons/MemberIcon.vue";
 import GreenButtonIcon from "@/components/icons/GreenButtonIcon.vue";
 import YellowButtonIcon from "@/components/icons/YellowButtonIcon.vue";
 import RedButtonIcon from "@/components/icons/RedButtonIcon.vue";
+const props = defineProps({
+  member: {
+    type: Object,
+    required: true,
+  },
+});
 </script>

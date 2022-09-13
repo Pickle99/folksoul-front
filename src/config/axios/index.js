@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getSanctumToken } from "@/helpers/sanctum/index.js";
 
 const axiosInstance = axios.create({
   withCredentials: true,
@@ -9,7 +10,7 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     "X-Requested-With": "XMLHttpRequest",
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    Authorization: "Bearer " + getSanctumToken(),
   },
 });
 

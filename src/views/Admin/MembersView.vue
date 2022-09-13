@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center" v-if="members !== []">
     <NavigationBar />
     <WhiteWindow class="max-w-[70rem] min-w-[70rem]">
       <div>
@@ -9,9 +9,12 @@
           <h1>ჯგუფის წევრები</h1>
         </header>
         <div class="flex mt-20 justify-around mx-16">
-          <BandMember class="px-5" />
-          <BandMember class="px-5" />
-          <BandMember class="px-5" />
+          <BandMember
+            class="px-5"
+            v-for="member in membersStore.members"
+            :key="member"
+            :member="member"
+          />
         </div>
       </div>
       <div class="flex justify-center flex-col items-center mt-16">
@@ -37,4 +40,19 @@ import NavigationBar from "@/components/UI/NavigationBar.vue";
 import WhiteWindow from "@/components/WhiteWindow.vue";
 import BandMember from "@/components/BandMember.vue";
 import BasicButton from "@/components/UI/BasicButton.vue";
+import { useMembersStore } from "@/stores/useMembersStore.js";
+import { onMounted } from "vue";
+import axios from "@/config/axios/index.js";
+
+const membersStore = useMembersStore();
+
+onMounted(() => {
+  axios
+    .get("members")
+    .then((res) => {
+      console.log(res);
+      membersStore.members = res.data;
+    })
+    .catch((err) => console.log(err));
+});
 </script>
